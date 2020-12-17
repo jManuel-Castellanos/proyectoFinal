@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Reservacion {
 
     Reservacion mesas[] = new Reservacion[7];
-
+//HOLANGAS
     private String nombrePersona = "";
     private int cantidadPersonas = 0;
     private String fecha = "";
