@@ -24,7 +24,6 @@ public class Empleado {
     }
 
     public void verificar() {
-        // boolean estado = false;
         int vueltas = 3;
 
         do {

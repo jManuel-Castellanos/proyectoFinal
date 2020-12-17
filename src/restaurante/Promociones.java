@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 public class Promociones {
 
     private Promociones promociones[] = new Promociones[6];
-    //private String calendario[] = new String[12];
 
     //ATRIBUTOS
     private String mes;

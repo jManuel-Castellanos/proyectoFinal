@@ -14,18 +14,17 @@ public class Menu {
         int opcion = 0;
         int opcionClientes = 0;
 
-        if (empleado1.getEstado() == false) {
-            empleado1.verificar();
-        }
-
         do {
+            if (empleado1.getEstado() == false) {
+                empleado1.verificar();
+            }
+
             opcion = Integer.parseInt(JOptionPane.showInputDialog("--SODA DON PEPE--"
                     + "\n\n1. Opciones de Cliente"
                     + "\n2. Opciones Carta"
-                    + "\n3. Agregar Pedido"
-                    + "\n4. Reservaciones"
-                    + "\n5. Promociones"
-                    + "\n6. Salir"));
+                    + "\n3. Reservaciones"
+                    + "\n4. Promociones"
+                    + "\n5. Salir"));
 
             switch (opcion) {
                 case 1:
@@ -53,6 +52,7 @@ public class Menu {
                         }
                     } while (opcionClientes != 4);
                     break;
+
                 case 2:
                     do {
                         opcionClientes = Integer.parseInt(JOptionPane.showInputDialog("--SODA DON PEPE--"
@@ -72,11 +72,11 @@ public class Menu {
                                 JOptionPane.showMessageDialog(null, "DIGITE UNA OPCIÓN VALIDA", "**OPCION INCORRECTA**", JOptionPane.ERROR_MESSAGE);
                                 break;
                         }
-                    } while (opcionClientes != 3);
 
-                case 3://Agregar Pedido
+                    } while (opcionClientes != 3);
                     break;
-                case 4://Hacer Reservacion
+
+                case 3://Hacer Reservacion
                     do {
                         opcionClientes = Integer.parseInt(JOptionPane.showInputDialog("--SODA DON PEPE--"
                                 + "\n\n1. Agregar Reservación"
@@ -102,7 +102,7 @@ public class Menu {
                         }
                     } while (opcionClientes != 4);
                     break;
-                case 5://Promociones
+                case 4://Promociones
                     do {
                         opcionClientes = Integer.parseInt(JOptionPane.showInputDialog("--SODA DON PEPE--"
                                 + "\n\n1. Mostrar Promociones"
@@ -126,11 +126,11 @@ public class Menu {
                                 break;
                         }
                     } while (opcionClientes != 4);
-                case 6://Salir
+                case 5://Salir
                     break;
             }
 
-        } while (opcion != 6);
+        } while (opcion != 5);
 
     }
 

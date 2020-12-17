@@ -37,19 +37,17 @@ public class Reservacion {
                 cambio = Byte.parseByte(JOptionPane.showInputDialog(null, "NUESTRO MÁXIMO DE PERSONAS PARA UNA RESERVACIÓN ES DE 8\n¿DESEA CANCELAR LA RESERVACIÓN?\nSI    NO\n1      2",
                         "MAXIMO DE PERSONAS SUPERADO", JOptionPane.ERROR_MESSAGE));
             } else {
-                correcto = true;//CAMBIÉ DE TURE
+                correcto = true;
             }
 
             if (cantidadPersonas > 8 && cambio == 2) {
-                correcto = false;//CAMBIÉ DE FALSE
+                correcto = false;
             } else {
                 correcto = true;
             }
-//SI DIGITA BIEN ES TRUE
-//DESEA CANCELAR TRUE
-//VOLVER A DIGITAR FALSE
+
         } while (correcto != true);
-//CAMBIÉ DE TRUE
+
         if (cantidadPersonas < 8 && cantidadPersonas > 0) {
             correcto = false;
         }

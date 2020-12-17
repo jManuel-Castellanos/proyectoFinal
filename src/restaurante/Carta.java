@@ -18,6 +18,11 @@ public class Carta {
     private boolean definido = false;
     private boolean cambio = false;
 
+    private String pedidoComida = "";
+    private String pedidoBebida = "";
+    private float totalComida = 0;
+    private float totalBebida = 0;
+
     public Carta(String nomComida, String nomBebida, float precioBebida, float precioComida, String descripcion) {
         this.nomComida = nomComida;
         this.nomBebida = nomBebida;
@@ -26,32 +31,20 @@ public class Carta {
         this.precioComida = precioComida;
     }
 
-    public String getNomComida() {
-        return nomComida;
+    public String getPedidoComida() {
+        return pedidoComida;
     }
 
-    public String getNomBebida() {
-        return nomBebida;
+    public String getPedidoBebida() {
+        return pedidoBebida;
     }
 
-    public float getPrecioComida() {
-        return precioComida;
+    public float getTotalComida() {
+        return totalComida;
     }
 
-    public float getPrecioBebida() {
-        return precioBebida;
-    }
-
-    public String getComida() {
-        return comida;
-    }
-
-    public String getBebida() {
-        return bebida;
-    }
-
-    public Carta[] getCarta() {
-        return carta;
+    public float getTotalBebida() {
+        return totalBebida;
     }
 
     public void mostrarCarta(int opcion, int opcion2, int opcion3, boolean cambio) {
@@ -123,7 +116,8 @@ public class Carta {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(comida + bebida + "\n\n¿Qué desea cambiar?\n1.Comidas        2.Bebidas"));
         } while (opcion != 1 && opcion != 2);
 
-        if (opcion == 1) {   //OPCIONES DE CAMBIAR COMIDA
+        //OPCIONES DE CAMBIAR COMIDA
+        if (opcion == 1) {
 
             do {
                 opcion2 = Integer.parseInt(JOptionPane.showInputDialog(comida + "\n\n¿Qué opcion desea cambiar?\n1. Nombre\n2. Precio\n3. Descripción"));
@@ -173,8 +167,8 @@ public class Carta {
                     cambio = true;
                     break;
             }
-
-        } else { //OPCIONES DE CAMBIAR BEBIDAS
+            //OPCIONES DE CAMBIAR BEBIDAS
+        } else {
             do {
                 opcion2 = Integer.parseInt(JOptionPane.showInputDialog(bebida + "\n\n¿Qué opcion desea cambiar?\n1. Nombre\n2. Precio"));
             } while (opcion2 != 1 && opcion2 != 2);
@@ -188,8 +182,6 @@ public class Carta {
                     for (int i = 0; i < carta.length; i++) {
                         if ((opcion3 - 1) == i) {
                             carta[i].nomBebida = JOptionPane.showInputDialog("¿Digite el nuevo nombre de la comida");
-                            //Poner el cambio=true acá, añadir do while
-                            //REVISAR PORQUE EL ELEMENTO 4 QUEDA EN BLANCO
                         }
                     }
                     cambio = true;
@@ -213,4 +205,5 @@ public class Carta {
         }
         mostrarCarta(opcion, opcion2, opcion3, true);
     }
+
 }
